@@ -1,36 +1,65 @@
-# gitExam
+# Agents
 
-## What is the SDLC?
-SDLC stands for **Software Development Life Cycle**.  
-It is a structured process teams use to plan, build, test, deploy, and maintain software.
+## What Is an Agent?
 
-### Main SDLC Phases
-1. **Planning** - Define goals, scope, timeline, and resources.
-2. **Requirements Analysis** - Gather and document what users and the business need.
-3. **Design** - Create system architecture, database design, and user interface plans.
-4. **Development** - Write the code and build the application features.
-5. **Testing** - Check for bugs and verify the software meets requirements.
-6. **Deployment** - Release the software to users or production environments.
-7. **Maintenance** - Monitor, fix issues, and improve the system over time.
+An **agent** is a software system that can perceive its environment, make decisions, and take actions to achieve a goal with some degree of autonomy. Modern AI agents are built on top of large language models (LLMs) and can reason, plan, use tools, and act on a user's behalf instead of just answering a single question.
 
-Using SDLC helps teams deliver better quality software with less risk.
+In short: a chatbot responds, an **agent acts**.
 
-## Difference Between SDLC and STLC
-`SDLC` (Software Development Life Cycle) and `STLC` (Software Testing Life Cycle) are related, but not the same:
+## Core Capabilities
 
-- **SDLC** focuses on the full software process: planning, designing, coding, testing, deployment, and maintenance.
-- **STLC** focuses only on the testing process: test planning, test case design, environment setup, test execution, and test closure.
-- **Scope:** SDLC is broader; STLC is a part of SDLC.
-- **Goal:** SDLC aims to build the software; STLC aims to verify software quality.
+- **Reasoning & Planning** - Break a high-level goal into smaller, ordered steps.
+- **Tool Use** - Call external tools, APIs, databases, or run code to get things done.
+- **Memory** - Keep track of context across steps (and sometimes across sessions).
+- **Autonomy** - Decide the next action without needing a human prompt at every step.
+- **Feedback Loop** - Observe the result of an action and adjust the next one.
 
-In short, **STLC is the testing part inside the larger SDLC process**.
+## How an Agent Works
 
-## Interview Answer (SDLC vs STLC)
-You can answer like this:
+A typical agent runs in a loop until the goal is reached:
 
-"SDLC is the complete software development process, from planning to maintenance.  
-STLC is the testing process within SDLC, from test planning to test closure.  
-So, SDLC builds the software, while STLC ensures its quality."
+1. **Goal** - The user gives a task or objective.
+2. **Plan** - The agent decides what steps are needed.
+3. **Act** - It executes a step, often by calling a tool.
+4. **Observe** - It reads the result of that action.
+5. **Reflect** - It checks progress and updates the plan.
+6. **Repeat** - It loops until the goal is complete, then returns the result.
 
-Optional extra line:
-"STLC runs alongside development to make sure the product is reliable before release."
+## Key Components
+
+- **Model (LLM)** - The "brain" that reasons and generates decisions.
+- **Tools** - Functions the agent can call (search, code execution, file edits, API calls).
+- **Memory** - Short-term context and optional long-term storage.
+- **Orchestrator** - The logic that runs the perceive-decide-act loop.
+
+## Types of Agents
+
+- **Single-step assistants** - Answer or perform one action at a time.
+- **Autonomous agents** - Run multi-step tasks on their own until done.
+- **Multi-agent systems** - Several specialized agents collaborate, each handling part of a task.
+
+## Common Use Cases
+
+- Writing, reviewing, and debugging code.
+- Researching and summarizing information.
+- Automating repetitive workflows.
+- Interacting with APIs and external systems.
+- Acting as customer support or personal assistants.
+
+## Benefits and Challenges
+
+**Benefits**
+
+- Save time by automating multi-step work.
+- Handle complex tasks with less human input.
+- Integrate with many tools and systems.
+
+**Challenges**
+
+- Can make mistakes or "hallucinate" incorrect actions.
+- Need guardrails and oversight for safety.
+- Cost and reliability depend on the underlying model and tools.
+
+## Summary
+
+An agent is an AI system that doesn't just answer questions, it **takes action**. By combining reasoning, tools, memory, and an act-observe-reflect loop, agents can plan and complete real-world tasks with growing autonomy.
